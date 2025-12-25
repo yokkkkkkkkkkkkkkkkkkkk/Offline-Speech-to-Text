@@ -1,0 +1,19 @@
+name: Build APK
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Buildozer
+        run: |
+          pip install --upgrade pip
+          pip install buildozer cython==0.29.33
+      - name: Build APK
+        run: |
+          # سنضيف أمر البناء هنا لاحقاً بمجرد تجهيز ملف spec
+          echo "Ready to build"
